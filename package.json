@@ -1,7 +1,6 @@
 {
   "name": "projeto-final-felinos-selvagens",
   "version": "1.0.0",
-  "main": "script.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
