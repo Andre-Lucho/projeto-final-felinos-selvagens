@@ -6,29 +6,31 @@ Nos Faqs ==> some/ aparecem as respostas
 
 */
 
-export default function initAccordionList() {
-  const actived = "actived";
-  const accordionList = document.querySelectorAll(
-    "[data-anime='accordion'] dt"
-  );
-  // console.log(accordionList);
+export default class AccordionList {
+  constructor(list) {
+    this.activeClass = "actived";
+    this.accordionList = document.querySelectorAll(list);
+  }
 
-  if (accordionList.length) {
-    // Verifica se eu tenho uma lista de elementos
-
-    accordionList[0].classList.add(actived);
-    accordionList[0].nextElementSibling.classList.add(actived);
-    // a 1°Faq dt e dd ficam ativas ao carregar a página por padrão
-
-    function activeAccordion() {
-      this.classList.toggle(actived);
-      this.nextElementSibling.classList.toggle(actived);
-      // add class activeClass no dt e dt que estou clicando
-      // toggle --> se está ativo === tira; se não === add
-    }
-
-    accordionList.forEach((item) =>
-      item.addEventListener("click", activeAccordion)
+  // adiona eventos ao accordion
+  addAccordionEvent() {
+    this.accordionList.forEach((dt) =>
+      dt.addEventListener("click", () => this.togleAccordion(dt))
     );
+  }
+
+  togleAccordion(dt) {
+    // console.log(dt);
+    dt.classList.toggle(this.activeClass);
+    dt.nextElementSibling.classList.toggle(this.activeClass);
+  }
+
+  // iniciar função
+  init() {
+    if (this.accordionList.length) {
+      this.togleAccordion(this.accordionList[0]);
+    }
+    this.addAccordionEvent();
+    return this;
   }
 }
