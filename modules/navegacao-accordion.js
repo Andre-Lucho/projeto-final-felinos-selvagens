@@ -32,4 +32,3 @@ export default function initAccordionList() {
     );
   }
 }
-console.log("teste");
