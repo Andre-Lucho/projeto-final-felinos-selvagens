@@ -1,7 +1,7 @@
 import TabNavegation from "./modules/navegacao-tabs.js";
 import AccordionList from "./modules/navegacao-accordion.js";
 import SmoothScroll from "./modules/scroll-suave.js";
-import initModal from "./modules/modal.js";
+import Modal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
@@ -22,9 +22,16 @@ const tabNavegation = new TabNavegation(
   "[data-tab='menu'] li",
   "[data-tab='content'] section"
 );
+
 tabNavegation.init();
 
-initModal();
+const modal = new Modal(
+  "[data-modal='open']",
+  "[data-modal='close']",
+  "[data-modal='container']"
+);
+modal.init();
+
 initTooltip();
 initDropDownMenu();
 initMenuMobile();
