@@ -44,5 +44,6 @@ export default class TabNavegation {
       this.tabContent[0].classList.add(this.actived);
       this.addTabNavEvent();
     }
+    return this;
   }
 }

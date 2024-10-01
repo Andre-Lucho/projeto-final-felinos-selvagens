@@ -57,8 +57,8 @@ export default class SmoothScroll {
     if (this.internalLinks.length) {
       // verificação
       this.addLinkEvent();
-      return this;
       // p podermos linkarmos outros métodos e propriedades
     }
+    return this;
   }
 }

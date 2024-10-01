@@ -22,7 +22,7 @@
   min-width: 400px;
 }
 
-.modal-container.ativo {
+.modal-container.actived {
   display: flex;
 }
 
@@ -38,7 +38,7 @@
   }
 }
 
-.ativo .modal {
+.actived .modal {
   animation: modal 0.5s forwards;
 }
 
