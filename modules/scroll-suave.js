@@ -20,7 +20,7 @@ export default class SmoothScroll {
 
   scrollToSection(e) {
     /* antes bind():
-    console.log(this); // ref ao link do menu
+    console.log(this); // ref ao link do menu == cada link do forEach de 'addLinkEvent()'
     this. options --> undefined
     após bind() --> this == Classe!! */
     e.preventDefault();

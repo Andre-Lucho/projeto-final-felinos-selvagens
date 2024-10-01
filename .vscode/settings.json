@@ -1,4 +1,11 @@
 {
   "liveServer.settings.port": 5501,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "window.zoomPerWindow": true,
+  "terminal.integrated.mouseWheelZoom": true,
+  "editor.mouseWheelZoom": true,
+  "editor.fontSize": 18,
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "'Arial'",
+  "editor.tabSize": 2
 }
