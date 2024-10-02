@@ -2,7 +2,7 @@ import TabNavegation from "./modules/navegacao-tabs.js";
 import AccordionList from "./modules/navegacao-accordion.js";
 import SmoothScroll from "./modules/scroll-suave.js";
 import Modal from "./modules/modal.js";
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import aula from "./modules/aula-setTimeout-setInterval.js";
@@ -14,7 +14,7 @@ import initScrollAnimt from "./modules/animacao-scroll.js";
 
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
 smoothScroll.init();
-// console.log(smoothScroll);
+
 const accordionList = new AccordionList("[data-anime='accordion'] dt");
 accordionList.init();
 
@@ -22,7 +22,6 @@ const tabNavegation = new TabNavegation(
   "[data-tab='menu'] li",
   "[data-tab='content'] section"
 );
-
 tabNavegation.init();
 
 const modal = new Modal(
@@ -32,7 +31,9 @@ const modal = new Modal(
 );
 modal.init();
 
-initTooltip();
+const tooltip = new Tooltip("[data-tooltip]");
+tooltip.init();
+
 initDropDownMenu();
 initMenuMobile();
 aula();
