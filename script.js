@@ -9,7 +9,7 @@ import aula from "./modules/aula-setTimeout-setInterval.js";
 import initDataObject from "./modules/aula_dataObject.js";
 import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
-import initTooltipAnimals from "./modules/tooltip-animals.js";
+import TooltipAnimals from "./modules/tooltip-animals.js";
 import initScrollAnimt from "./modules/animacao-scroll.js";
 
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
@@ -34,11 +34,13 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
+const tooltipAnimals = new TooltipAnimals("[data-tooltip-animals] li img");
+tooltipAnimals.init();
+
 initDropDownMenu();
 initMenuMobile();
 aula();
 initDataObject();
 initFetchAnimais();
 initFetchBitcoin();
-initTooltipAnimals();
 initScrollAnimt();
