@@ -37,7 +37,7 @@ tooltip.init();
 const tooltipAnimals = new TooltipAnimals("[data-tooltip-animals] li img");
 tooltipAnimals.init();
 
-initDropDownMenu();
+const numbers = new initDropDownMenu();
 initMenuMobile();
 aula();
 initDataObject();
