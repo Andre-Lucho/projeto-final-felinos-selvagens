@@ -3,13 +3,13 @@ import AccordionList from "./modules/navegacao-accordion.js";
 import SmoothScroll from "./modules/scroll-suave.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
+import TooltipAnimals from "./modules/tooltip-animals.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import aula from "./modules/aula-setTimeout-setInterval.js";
 import initDataObject from "./modules/aula_dataObject.js";
 import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
-import TooltipAnimals from "./modules/tooltip-animals.js";
 import initScrollAnimt from "./modules/animacao-scroll.js";
 
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
