@@ -6,11 +6,11 @@ import Tooltip from "./modules/tooltip.js";
 import TooltipAnimals from "./modules/tooltip-animals.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
 import initMobileMenu from "./modules/mobile-menu.js";
-import aula from "./modules/aula-setTimeout-setInterval.js";
+// import aula from "./modules/aula-setTimeout-setInterval.js";
 import initDataObject from "./modules/aula_dataObject.js";
 import animalsFetch from "./modules/animals-fetch.js";
 import BitcoinFetch from "./modules/bitcoin-fetch.js";
-import initScrollAnimt from "./modules/scroll-animat.js";
+import AnimatToScroll from "./modules/scroll-animat.js";
 
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
 smoothScroll.init();
@@ -37,10 +37,12 @@ tooltip.init();
 const tooltipAnimals = new TooltipAnimals("[data-tooltip-animals] li img");
 tooltipAnimals.init();
 
-const numbers = new initDropDownMenu();
-initMobileMenu();
-aula();
-initDataObject();
+const animatToScroll = new AnimatToScroll("[data-anime='scroll']");
+animatToScroll.init();
+
 animalsFetch("../animaisAPI.json", ".grid-numbers");
 BitcoinFetch("https://blockchain.info/ticker", "[data-bitcoin]");
-initScrollAnimt();
+
+initMobileMenu();
+initDropDownMenu();
+initDataObject();
