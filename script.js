@@ -1,16 +1,16 @@
-import TabNavegation from "./modules/navegacao-tabs.js";
-import AccordionList from "./modules/navegacao-accordion.js";
-import SmoothScroll from "./modules/scroll-suave.js";
+import TabNavegation from "./modules/tabs-navegation.js";
+import AccordionList from "./modules/accordion-navegat-.js";
+import SmoothScroll from "./modules/smooth-scroll.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import TooltipAnimals from "./modules/tooltip-animals.js";
 import initDropDownMenu from "./modules/dropdown-menu.js";
-import initMenuMobile from "./modules/menu-mobile.js";
+import initMobileMenu from "./modules/mobile-menu.js";
 import aula from "./modules/aula-setTimeout-setInterval.js";
 import initDataObject from "./modules/aula_dataObject.js";
-import initFetchAnimais from "./modules/fetch-animais.js";
+import animalsFetch from "./modules/animals-fetch.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
-import initScrollAnimt from "./modules/animacao-scroll.js";
+import initScrollAnimt from "./modules/scroll-animat.js";
 
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
 smoothScroll.init();
@@ -38,9 +38,9 @@ const tooltipAnimals = new TooltipAnimals("[data-tooltip-animals] li img");
 tooltipAnimals.init();
 
 const numbers = new initDropDownMenu();
-initMenuMobile();
+initMobileMenu();
 aula();
 initDataObject();
-initFetchAnimais();
+animalsFetch("../animaisAPI.json", ".grid-numbers");
 initFetchBitcoin();
 initScrollAnimt();
