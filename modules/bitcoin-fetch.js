@@ -1,4 +1,6 @@
 export default function BitcoinFetch(url, target) {
+  console.log("teste");
+
   async function fetchBitcoin() {
     try {
       const bitcoinR = await fetch(url);
