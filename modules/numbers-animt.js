@@ -1,4 +1,4 @@
-export default class AnimaNumeros {
+export default class NumberAnimation {
   constructor(numbers, observerTarget, observerClass) {
     this.numbers = document.querySelectorAll(numbers);
     this.observerTarget = document.querySelector(observerTarget);
