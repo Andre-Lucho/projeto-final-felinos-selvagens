@@ -9,7 +9,7 @@ import initMobileMenu from "./modules/mobile-menu.js";
 import aula from "./modules/aula-setTimeout-setInterval.js";
 import initDataObject from "./modules/aula_dataObject.js";
 import animalsFetch from "./modules/animals-fetch.js";
-import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import BitcoinFetch from "./modules/bitcoin-fetch.js";
 import initScrollAnimt from "./modules/scroll-animat.js";
 
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
@@ -42,5 +42,5 @@ initMobileMenu();
 aula();
 initDataObject();
 animalsFetch("../animaisAPI.json", ".grid-numbers");
-initFetchBitcoin();
+BitcoinFetch("https://blockchain.info/ticker", "[data-bitcoin]");
 initScrollAnimt();
