@@ -1,5 +1,6 @@
 export default function BitcoinFetch(url, target) {
   console.log("teste");
+  console.log("teste2");
 
   async function fetchBitcoin() {
     try {
