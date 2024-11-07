@@ -6,8 +6,6 @@ import Tooltip from "./modules/tooltip.js";
 import TooltipAnimals from "./modules/tooltip-animals.js";
 import DropDownMenu from "./modules/dropdown-menu.js";
 import initMobileMenu from "./modules/mobile-menu.js";
-// import aula from "./modules/aula-setTimeout-setInterval.js";
-import initDataObject from "./modules/aula_dataObject.js";
 import animalsFetch from "./modules/animals-fetch.js";
 import BitcoinFetch from "./modules/bitcoin-fetch.js";
 import AnimatToScroll from "./modules/scroll-animat.js";
@@ -47,4 +45,3 @@ const dropDownMenu = new DropDownMenu("[data-dropdown]");
 dropDownMenu.init();
 
 initMobileMenu();
-initDataObject();
