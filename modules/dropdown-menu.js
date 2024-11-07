@@ -1,34 +1,40 @@
 import outsideClick from "./outsideClick.js";
 
-export default function initDropDownMenu() {
-  const dropdownMenus = document.querySelectorAll("[data-dropdown]");
-  const events = ["touchstart", "click"];
-  // evento tipo 'click' demora 300ms nos mobiles
+export default class DropDownMenu {
+  constructor(links, events) {
+    this.dropdownMenus = document.querySelectorAll(links);
 
-  dropdownMenus.forEach((menu) => {
-    events.forEach(
-      (userEvent) => menu.addEventListener(userEvent, handleClick)
+    // define os tipos de evento-padrão ao arg 'events'
+    if (this.events === undefined) this.events = ["touchstart", "click"];
+    else this.events = events;
 
-      // userEvent --> relacionado aos eventos de touch e click
-    );
-  });
+    this.activeDropDownMenu = this.activeDropDownMenu.bind(this);
+    this.activeClass = "actived";
+  }
 
-  // utilizei 2 eventos para o mesmo forEach em dropdownMenus
-  // touchstart é para mobile
-
-  function handleClick(event) {
+  // Ativa o dropDownMenu e add a função que 'observa' o 'click' fora dele
+  activeDropDownMenu(event) {
     event.preventDefault();
-    this.classList.add("actived");
-    // this --> menu = para cada submenu (handleclick é uma funçao callback de menu.addEventListener(userEvent, handleClick))
+    const dropLink = event.currentTarget;
+    dropLink.classList.add(this.activeClass);
 
-    // função ativada --> quero q funcione com esses parâmentros abaixo:
-
-    outsideClick(this, events, () => {
-      this.classList.remove("actived");
-      /* this => html --> document.documentElement --> qd clico FORA do MENU
-        console.log('ativou');
-        toda vez que o handleClick for ativado, outsideClick(função) será ativado
-        arquivo --> outsideClick.js*/
+    outsideClick(dropLink, this.events, () => {
+      dropLink.classList.remove(this.activeClass);
     });
+  }
+
+  // Add os eventos ao menus tipo DropDown
+  addDropDownMenuEvent() {
+    this.dropdownMenus.forEach((menu) => {
+      this.events.forEach(
+        (userEvent) => menu.addEventListener(userEvent, this.activeDropDownMenu)
+        // userEvent --> relacionado aos eventos de touch e click
+      );
+    });
+  }
+
+  init() {
+    if (this.dropdownMenus.length) this.addDropDownMenuEvent();
+    return this;
   }
 }
