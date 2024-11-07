@@ -14,9 +14,7 @@ export default function outsideClick(element, events, callback) {
   }
   /* Verificando se já foi add ao element (a tag <li> do menu) o data-outside;
   se não, ele adiciona o evento de click ao html
-  Tudo isso para add APENAS 1 EVENTO de Click ao HTML --> não acumular eventos quando clico
-  
-  */
+  Tudo isso para add APENAS 1 EVENTO de Click ao HTML --> não acumular eventos quando clico  */
 
   // função declarada;
 

@@ -4,7 +4,7 @@ import SmoothScroll from "./modules/smooth-scroll.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import TooltipAnimals from "./modules/tooltip-animals.js";
-import initDropDownMenu from "./modules/dropdown-menu.js";
+import DropDownMenu from "./modules/dropdown-menu.js";
 import initMobileMenu from "./modules/mobile-menu.js";
 // import aula from "./modules/aula-setTimeout-setInterval.js";
 import initDataObject from "./modules/aula_dataObject.js";
@@ -43,6 +43,8 @@ animatToScroll.init();
 animalsFetch("../animaisAPI.json", ".grid-numbers");
 BitcoinFetch("https://blockchain.info/ticker", "[data-bitcoin]");
 
+const dropDownMenu = new DropDownMenu("[data-dropdown]");
+dropDownMenu.init();
+
 initMobileMenu();
-initDropDownMenu();
 initDataObject();
