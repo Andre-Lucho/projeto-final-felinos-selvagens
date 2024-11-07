@@ -28,18 +28,6 @@ body {
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
 
-/* teste JS DOM */
-
-.background01 {
-  background-color: #000000;
-}
-
-.textoAumentado {
-  font-size: 150%;
-}
-
-/* teste JS DOM - Fim*/
-
 .menu {
   grid-column: 3 / -1;
   background-color: #fb5;
