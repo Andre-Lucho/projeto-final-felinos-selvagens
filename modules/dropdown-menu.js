@@ -1,25 +1,22 @@
 import outsideClick from "./outsideClick.js";
 
 export default class DropDownMenu {
-  constructor(links, events) {
+  constructor(links, classType, events = ["touchstart", "click"]) {
     this.dropdownMenus = document.querySelectorAll(links);
-
-    // define os tipos de evento-padrão ao arg 'events'
-    if (this.events === undefined) this.events = ["touchstart", "click"];
-    else this.events = events;
+    this.classType = classType;
+    this.events = events;
 
     this.activeDropDownMenu = this.activeDropDownMenu.bind(this);
-    this.activeClass = "actived";
   }
 
   // Ativa o dropDownMenu e add a função que 'observa' o 'click' fora dele
   activeDropDownMenu(event) {
     event.preventDefault();
     const dropLink = event.currentTarget;
-    dropLink.classList.add(this.activeClass);
+    dropLink.classList.add(this.classType);
 
     outsideClick(dropLink, this.events, () => {
-      dropLink.classList.remove(this.activeClass);
+      dropLink.classList.remove(this.classType);
     });
   }
 

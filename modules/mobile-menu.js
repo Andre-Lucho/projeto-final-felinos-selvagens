@@ -1,33 +1,32 @@
 import outsideClick from "./outsideClick.js";
 
-export default function initMobileMenu() {
-  const menuBtn = document.querySelector('[data-menu="button"]');
-  const menuList = document.querySelector('[data-menu="list"]');
-  const events = ["touchstart", "click"];
+export default class MobileMenu {
+  constructor(button, list, classType, events = ["touchstart", "click"]) {
+    this.menuBtn = document.querySelector(button);
+    this.menuList = document.querySelector(list);
+    this.classType = classType;
+    this.events = events;
 
-  if (menuBtn) {
-    function openMenu(event) {
-      menuBtn.classList.add("actived");
-      menuList.classList.add("actived");
-      outsideClick(menuList, events, () => {
-        menuBtn.classList.remove("actived");
-        menuList.classList.remove("actived");
-        /* 
-      o callback está sendo executado ao mesmo tempo que os classList.add
-      então, ele add e remove
-      pois o menuList está no 'lado de fora' e atende a condição presente na função outsideClick (handleOutsideClick)
-      
-      ** IMPORTANTE:
-        é necessário a adição de um setTimeOut na 'função-Pai' outsideClick, pois o elemento 'menuList' já se encontra do lado de fora no código html, 
-        diferentemente da estrutura html da função 'handleClick' em dropdown-menu.js, o que já faz atender a condição (if) da função callback de 'handleOutsideClick' em outsideClick.js.
+    this.activeMenuMobile = this.activeMenuMobile.bind(this);
+  }
 
-      Também poderia utlizar aqui o 'this'no lugar de menuList. Assim, evitaria a condição (if)em 'handleOutsideClick' em outsideClick.js
-      */
-      });
-    }
+  activeMenuMobile() {
+    this.menuBtn.classList.add(this.classType);
+    this.menuList.classList.add(this.classType);
+    outsideClick(this.menuList, this.events, () => {
+      this.menuBtn.classList.remove(this.classType);
+      this.menuList.classList.remove(this.classType);
+    });
+  }
 
-    events.forEach((userEvent) =>
-      menuBtn.addEventListener(userEvent, openMenu)
+  addMenuMobileEvent() {
+    this.events.forEach((userEvent) =>
+      this.menuBtn.addEventListener(userEvent, this.activeMenuMobile)
     );
+  }
+
+  init() {
+    if (this.menuBtn && this.menuList) this.addMenuMobileEvent();
+    return this;
   }
 }
