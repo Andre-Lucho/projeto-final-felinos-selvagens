@@ -1,9 +1,11 @@
 import debounce from "./debounce.js";
 export default class AnimatToScroll {
-  constructor(sections) {
+  constructor(sections, classType = "actived") {
     this.sections = document.querySelectorAll(sections);
     this.halfWindow = window.innerHeight * 0.5;
     this.checkDistance = debounce(this.checkDistance.bind(this), 60);
+    this.classType = classType;
+    this.init();
   }
 
   // Pega a distância de cada section em relação ao topo do site
@@ -25,9 +27,9 @@ export default class AnimatToScroll {
   checkDistance() {
     this.distance.forEach((item) => {
       if (window.scrollY > item.offsetTop) {
-        item.sectionTag.classList.add("actived");
-      } else if (item.sectionTag.classList.contains("actived")) {
-        item.sectionTag.classList.remove("actived");
+        item.sectionTag.classList.add(this.classType);
+      } else if (item.sectionTag.classList.contains(this.classType)) {
+        item.sectionTag.classList.remove(this.classType);
       }
     });
   }

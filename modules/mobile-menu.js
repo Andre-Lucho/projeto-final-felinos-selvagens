@@ -8,6 +8,7 @@ export default class MobileMenu {
     this.events = events;
 
     this.activeMenuMobile = this.activeMenuMobile.bind(this);
+    this.init();
   }
 
   activeMenuMobile() {

@@ -1,6 +1,3 @@
-/* 
-Tooltip é um informação extra que o usuário pode obter ao passar o mouse por cima de algo.
-**Para browsers Desktop --> em função dos eventos de mouse e não de touch  */
 export default class Tooltip {
   constructor(tooltip) {
     this.tooltip = document.querySelectorAll(tooltip);
@@ -9,6 +6,7 @@ export default class Tooltip {
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.init();
   }
 
   // cria a tooltip e add eventos 'mousemove' e 'mouseleave' ao target(mouse passa por cima do mapa)

@@ -5,6 +5,7 @@ export default class TooltipAnimals {
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.init();
   }
 
   onMouseOver(e) {

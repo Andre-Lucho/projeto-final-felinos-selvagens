@@ -7,6 +7,7 @@ export default class DropDownMenu {
     this.events = events;
 
     this.activeDropDownMenu = this.activeDropDownMenu.bind(this);
+    this.init();
   }
 
   // Ativa o dropDownMenu e add a função que 'observa' o 'click' fora dele

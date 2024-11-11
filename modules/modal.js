@@ -1,18 +1,19 @@
 export default class Modal {
-  constructor(openButton, closeButton, containerModal) {
+  constructor(openButton, closeButton, containerModal, classType = "actived") {
     this.openButton = document.querySelector(openButton);
     this.closeButton = document.querySelector(closeButton);
     this.containerModal = document.querySelector(containerModal);
-    this.actived = "actived";
+    this.classType = classType;
 
     // seta 'this' ao callback dos eventos p fazer apontar para a class Modal
     this.eventToggleModal = this.eventToggleModal.bind(this);
     this.modalClickOff = this.modalClickOff.bind(this);
+    this.init();
   }
 
   // abre ou fecha o modal
   modalToggle() {
-    this.containerModal.classList.toggle(this.actived);
+    this.containerModal.classList.toggle(this.classType);
   }
 
   // evento do modal

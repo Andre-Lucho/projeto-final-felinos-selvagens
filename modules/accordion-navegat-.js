@@ -1,15 +1,8 @@
-/*
------------------------------------
-10 - Tipo de Navegação Accordion
------------------------------------ 
-Nos Faqs ==> some/ aparecem as respostas
-
-*/
-
 export default class AccordionList {
-  constructor(list) {
-    this.activeClass = "actived";
+  constructor(list, classType = "actived") {
+    this.classType = classType;
     this.accordionList = document.querySelectorAll(list);
+    this.init();
   }
 
   // adiona eventos ao accordion
@@ -21,8 +14,8 @@ export default class AccordionList {
 
   togleAccordion(dt) {
     // console.log(dt);
-    dt.classList.toggle(this.activeClass);
-    dt.nextElementSibling.classList.toggle(this.activeClass);
+    dt.classList.toggle(this.classType);
+    dt.nextElementSibling.classList.toggle(this.classType);
   }
 
   // iniciar função

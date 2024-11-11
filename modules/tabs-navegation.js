@@ -1,24 +1,19 @@
-/*
-09 - Navegação por TABS
------------------------------------ 
-Relaciona uma lista de ítens 01(ítens navegáveis == imagens) com outra lista de ítens 02 (geralmente, conteúdo)
-Essa relação se dá 1/1 --> cada imagem está relacionada ao seu conteúdo, em uma sequência correlacionada de arrays
-*/
 export default class TabNavegation {
-  constructor(menu, content) {
+  constructor(menu, content, classType = "actived") {
     this.tabMenu = document.querySelectorAll(menu);
     this.tabContent = document.querySelectorAll(content);
-    this.actived = "actived";
+    this.classType = classType;
+    this.init();
   }
 
   // ativa cada tab e relaciona sua animação (dir ou baixo) de acordo com o index da mesma(tab); ver arq CSS correspondente
 
   activeTab(index) {
     this.tabContent.forEach((section) =>
-      section.classList.remove(this.actived)
+      section.classList.remove(this.classType)
     );
     const position = this.tabContent[index].dataset.anime;
-    this.tabContent[index].classList.add(this.actived, position);
+    this.tabContent[index].classList.add(this.classType, position);
   }
 
   // add os eventos nas tabs
@@ -41,7 +36,7 @@ export default class TabNavegation {
           : (item.dataset.anime = "show-down");
       });
 
-      this.tabContent[0].classList.add(this.actived);
+      this.tabContent[0].classList.add(this.classType);
       this.addTabNavEvent();
     }
     return this;

@@ -1,21 +1,12 @@
-/*
-11 - Scroll Suave Link Interno 
------------------------------------ 
-Scroll suave nas opções do section 'Nav' com o seu conteúdo correspondente */
 export default class SmoothScroll {
-  constructor(links, options) {
+  constructor(links, options = { behavior: "smooth" }) {
     this.internalLinks = document.querySelectorAll(links);
-
-    if (options === undefined) {
-      this.options = { behavior: "smooth" };
-    } else {
-      this.options = options;
-    }
-
+    this.options = options;
     this.scrollToSection = this.scrollToSection.bind(this);
     // console.log(this.scrollToSection.bind(this));
     // bind - indicando para o método scrollToSection() que o THIS é esse que está no constructor = Classe
     // Padrão p/ Classes qd tenho 1 Callback
+    this.init();
   }
 
   scrollToSection(e) {
