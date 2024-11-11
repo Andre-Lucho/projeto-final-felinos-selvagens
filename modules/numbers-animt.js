@@ -11,7 +11,7 @@ export default class NumberAnimation {
   // recebe um elem do Dom com um número na tag <span>
   // incrementa a partir de 0 até número contido em <span>
   static increaseNumbers(number) {
-    // função tipo static -> não tenho nehuma referência a nenhuma propriedade do meu constructor e não faz parte do Objeto AnimaNumeros. Devo fazer referência ao constructor --> é um método do construtor de AnimaNumeros e não do protótipo
+    // função tipo static -> não tenho nenhuma referência a nenhuma propriedade do meu constructor e não faz parte do Objeto AnimaNumeros. Devo fazer referência ao constructor --> é um método do construtor de AnimaNumeros e não do protótipo
     const innerNumber = +number.innerText;
     const increase = Math.floor(innerNumber / 100);
 
