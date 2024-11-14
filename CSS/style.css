@@ -5,13 +5,5 @@
 @import "modal.css";
 @import "navegacao-tab-accordion-scroll.css";
 @import "numbers.css";
-@import "shopTime.css"; /* Exercício aula-setTimeout-setInterval */
+@import "operation-time.css";
 @import "tooltips.css";
-
-/* body {
-  background-color: #94bdff;
-}
-
-body.actived {
-  background-color: #ff9494;
-} */

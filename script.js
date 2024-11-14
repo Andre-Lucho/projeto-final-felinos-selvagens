@@ -4,6 +4,7 @@ import BitcoinFetch from "./modules/bitcoin-fetch.js";
 import DropDownMenu from "./modules/dropdown-menu.js";
 import MobileMenu from "./modules/mobile-menu.js";
 import Modal from "./modules/modal.js";
+import OperationTime from "./modules/operation-time.js";
 import AnimatToScroll from "./modules/scroll-animat.js";
 import SmoothScroll from "./modules/smooth-scroll.js";
 import TabNavegation from "./modules/tabs-navegation.js";
@@ -28,6 +29,11 @@ const modal = new Modal(
   "[data-modal='close']",
   "[data-modal='container']",
   "actived"
+);
+const operationTime = new OperationTime(
+  "[data-week]",
+  "actived",
+  "deactivated"
 );
 const animatToScroll = new AnimatToScroll("[data-anime='scroll']", "actived");
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']", {
